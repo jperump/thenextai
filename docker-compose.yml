@@ -9,9 +9,13 @@ services:
       - "mongodb"
    links:
       - "mongodb"
+   volumes:
+      - "./webappdata:/opt/app/public/img/users"
    container_name: webapp
   mongodb:
    image: mongo
    ports:
       - "27017:27017"
    container_name: mongodb
+   volumes:
+      - "./mongodb:/data/db"
