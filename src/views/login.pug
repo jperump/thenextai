@@ -1,0 +1,34 @@
+extends ./Main_Layout.pug
+
+block styles_1
+    link(rel='stylesheet' href="/css/index.css")
+    link(rel='stylesheet' href="/css/link.css")
+block script_1
+    script(src='js/sticky.js')
+block content
+    br
+    br
+    br
+    br
+    br
+    div(class="Users_heading" style="text-align: center")
+        h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") User Login 
+        p Enter your Full Name and Password to Login.
+    br
+    br 
+    div(class="loginform")
+      div(class="container center_div" style=".center_div{margin: 0 auto;width:80%};")
+        div(class="row justify-content-center")
+          form(action="/loginUser/" + user._id method="post" style="width:400px;height: 340px;")
+            .form-group.row
+              label.col-sm-2.col-form-label(for='user') Full Name
+              .col-sm-10
+                input#inputEmail3.form-control(type="text" placeholder="Full Name" required="required" name="user")
+            .form-group.row
+              label.col-sm-2.col-form-label(for='psw') Password
+              .col-sm-10
+                input#inputEmail3.form-control(type='password', placeholder='Enter Password', name='psw', required='required')
+            div(style="text-align: center;")
+              button(onclick='myFunction()' class="button") Login
+            
+        

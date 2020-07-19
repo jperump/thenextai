@@ -1,0 +1,59 @@
+extends ./Main_Layout.pug
+
+block styles_1
+    link(rel='stylesheet' href="/css/index.css")
+    link(rel='stylesheet' href="/css/table.css")
+block content
+  br
+  br
+  br
+  br
+  br
+  br
+  div(class="container")
+    div(class="row")
+      div(class="shadow p-3 mb-5 bg-white rounded")
+        br
+        br
+        div(class="card" style="width: 18rem;")
+            img(class="card-img-top" src='/img/users/' + user.image alt="user.image")
+            div(class="card-body")
+              h5(class="card-title")= user.name
+              p(class="card-text")= user.email
+              a(href=user.linkedin class="btn btn-outline-info") Linked In Profile
+        br
+        br
+      div(class="col")
+        div(class="description" style="text-align:left;")
+          br
+          h4(style="color:rgb(14,14,64);font-weight: bold")=user.name
+          p(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;font-style: italic; font-weight: bold;background-image: linear-gradient(-90deg, grey, rgb(12, 106, 160, 0.3));") - #{user.desig}
+          p
+          b Email : 
+          i #{user.email}
+          br
+          br
+          p=user.descr
+  hr
+  div(class="project" style="text-align: center")
+    h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Projects 
+  br
+  table(class="table table-hover table-striped" style="box-shadow: 10px 10px 5px #888; width: 70%")
+    thead(class="head" style="background-color: grey; color: white; background-image: linear-gradient(-90deg, grey, rgb(12, 106, 160, 0.3));")
+        tr 
+            th(scope='col') Project/ Code
+            th(scope='col') Type (ML/DL/NLP/DS/AI)
+            th(scope='col') Description
+            th(scope='col') Programming Language
+            
+    tbody
+        each proj in projectList
+            tr
+                td=proj.name
+                td=proj.type
+                td=proj.descr
+                td=proj.lang
+  br
+  br
+  br
+

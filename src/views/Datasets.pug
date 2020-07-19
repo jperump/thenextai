@@ -1,0 +1,46 @@
+extends ./Main_Layout.pug 
+
+block styles_1
+    link(rel='stylesheet' href="/css/index.css")
+    link(rel='stylesheet' href="/css/table.css")
+    link(rel='stylesheet' href="/css/link.css")
+block content
+    br
+    br
+    br
+    br
+    div(class="Users_heading" style="text-align: center")
+        h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Datasets 
+        h4(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Datasets for easy downloading
+        br    
+        div(id="buttonDataset")
+            a(href="/Upload_dataset") Upload Dataset
+    br
+    hr
+    br
+    table(class="table table-hover table-striped" style="box-shadow: 10px 10px 5px #888; width: 70%")
+        thead(class="head" style="background-color: grey; color: white; background-image: linear-gradient(-90deg, grey, rgb(12, 106, 160, 0.3));")
+            tr 
+                th(scope='col') Dataset
+                th(scope='col') Type (text/audio/video)
+                th(scope='col') Description
+                th(scope='col') Uploaded By
+                th(scope='col') Download
+                th(scope='col') Delete
+        tbody
+            each data in datasetsVariables.datasets
+                a(href="/Datasets/" + data._id)
+                    tr
+                        td=data.name
+                        td=data.type
+                        td=data.desc
+                        td=data.authName
+                        td
+                            div(id="buttonDownload" style="text-align: center")
+                                a(href="/download/" + data._id) Download
+                        td  
+                            div(id="buttonDelete" style="text-align: center")
+                                a(href="/delete_dataset/" + data._id class="btn btn-danger") Delete
+   
+    
+                

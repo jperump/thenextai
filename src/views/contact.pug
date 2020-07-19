@@ -1,0 +1,44 @@
+extends ./Main_Layout.pug
+
+block styles_1
+    link(rel='stylesheet' href="/css/contact.css")
+  
+block content
+  br
+  br
+  br
+  br
+  br
+  body
+    .container 
+      div(style='text-align:center')
+        h2(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;text-align: center") Contact Us
+        p Give us a call, or leave us a message:
+      .row
+        .column
+          img(src='img/Logo.jpg', style='width:100%')
+        .column
+          form(action='/contact' method="post")
+            label(for='fname') Full Name
+            input#fname(type='text', name='name', placeholder='Enter Your Name')
+            label(for='email') Email
+            input#email(type='text', name='email', placeholder='Enter Your Email')
+            label(for='country') Country
+            select#country(name='country')
+              option(value='India') India
+              option(value='Canada') Canada
+              option(value='USA') USA
+            label(for='subject') Message : 
+            textarea#subject(name='subject', placeholder='Write something..', style='height:170px')
+            input(type='submit', value='Submit')
+      br
+      hr
+      br
+      div(class="admin" style='text-align:center')
+        h3 Admin Details
+        p Name : Neeraja N
+        p Designation : Data Scientist
+        p Email : nn@gmail.com
+        p Phone : +1 778-123-1234
+        p LinkedIn : https://www.linkedin.com/in/neeraja-neelakantan-425610103/
+        p Github : https://github.com/Neeraja61194

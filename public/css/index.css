@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.938), rgb(12, 106, 160, 0.3));
+}
+
+header ul{
+    float:right;
+    padding: 0;
+    margin: 0;
+}
+
+header ul li{
+    display: inline;
+    float:left;
+    margin: 30; 
+}
+header a{
+  color:rgb(14, 84, 112);
+  display: inline;
+  padding:10px 25px; 
+  height:40px;
+  line-height:10px; 
+  text-align:center;
+  font-family: 'Roboto Slab', serif; 
+  text-decoration:none;
+  text-transform:uppercase; 
+  letter-spacing:2px; 
+  font-weight:100;
+  background-image: linear-gradient(-90deg, rgba(7, 58, 58, 0.938), rgba(7, 81, 124, 0.3));
+}
+.navbar {
+    padding: 10px 16px;
+    overflow: hidden;
+    /*background-color: rgb(14, 84, 112);*/
+    position: fixed; /* Set the navbar to fixed position */
+    top: 400; /* Position the navbar at the top of the page */
+    width: 1420px; /* Full width */
+  }
+  
+  /* Links inside the navbar */
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change background on mouse-over */
+.navbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+.navbar .search-container {
+    float: right;
+  }
+.navbar input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+.navbar .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background-image: linear-gradient(-90deg, rgba(171, 199, 250, 0.6), rgb(12, 106, 160, 0.6));
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+  
+.main_image {
+  filter: blur(8px);
+  -webkit-filter: blur(4px);
+  height: 10%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 70%;
+  height: 60%;
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  padding: 16px;
+}
+.center {
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 700px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.typewrite {
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 50px;
+  text-decoration: none;
+}
+
+.container .content {
+  position: absolute;  /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  /*background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  /*background:rgba(50, 0, 10, 0.5);*/
+  /*background-color: rgba(14, 84, 112, 0.5);*/
+  background-color: rgba(138, 10, 36, 0.3);
+  background-image: linear-gradient(-90deg, rgb(85, 3, 3, 0.3), rgb(12, 106, 160, 0.3));
+  color: #f1f1f1; /* Grey text */
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+}
+
+P.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}

@@ -1,0 +1,52 @@
+extends ./Main_Layout.pug
+
+block styles_1
+    link(rel='stylesheet' href="/css/index.css")
+    link(rel='stylesheet' href="/css/link.css")
+block content
+  br
+  br
+  br
+  br
+  br
+  div(class="Users_heading" style="text-align: center")
+    h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") User Update Form
+    p Fill in the details to edit your User Account
+  div(class="container center_div" style=".center_div{margin: 0 auto;width:80%};")
+    div(class="row justify-content-center")
+      form(action="/userUpdate/" + user._id method="post" enctype="multipart/form-data" style="width:750px; height:700px;")
+        .form-group.row
+            label.col-sm-2.col-form-label(for='user') Full Name
+            .col-sm-10
+              input#inputEmail3.form-control(type="text" value=user.name placeholder="user name" required="required" name="user")
+        .form-group.row
+            label.col-sm-2.col-form-label(for='email') Email
+            .col-sm-10
+              input#inputEmail3.form-control(type='text' value=user.email placeholder='Enter Email', name='userEmail', required='')
+        .form-group.row
+            label.col-sm-2.col-form-label(for='designation') Job Title/ Designation
+            .col-sm-10
+              input#inputEmail3.form-control(type='text' value=user.desig placeholder='Enter current designation', name='designation', required='')
+        .form-group.row
+            label.col-sm-2.col-form-label(for='linkedIn') LinkedIn URL
+            .col-sm-10
+              input#inputEmail3.form-control(type='text' value=user.linkedin placeholder='Enter LinkedIn URL', name='linkedIn')
+        .form-group.row
+            label.col-sm-2.col-form-label(for='psw') Password
+            .col-sm-10
+              input#inputEmail3.form-control(type='password', placeholder='Enter Password', name='psw', required='')
+        .form-group.row
+            label.col-sm-2.col-form-label(for='myTextarea') Brief Description about You :
+            .col-sm-10
+              textarea(id="myTextarea" value=user.descr placeholder='Type here ...' name='description' rows="4" cols="75" style="white-space: pre-wrap;")
+            br
+            hr
+            br
+        label(for='psw-repeat')
+          b Choose a Profile Picture : 
+        input(type="file" value=user.image placeholder="user picture" name="file" required='')
+        br
+        hr
+        div(style="text-align: center;")       
+          button(onclick='myFunction()' class="button") Update
+      

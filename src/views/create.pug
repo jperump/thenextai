@@ -1,0 +1,54 @@
+extends ./Main_Layout.pug
+
+block styles_1
+  link(rel='stylesheet' href="/css/index.css")
+  link(rel='stylesheet' href="/css/link.css")
+block content
+    br
+    br
+    br
+    br
+    div(class="Users_heading" style="text-align: center")
+        h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Create User Account
+        p This is a form that you can use to create a new User
+    br
+    br 
+    div(class="container center_div" style=".center_div{margin: 0 auto;width:80%};")
+      div(class="row justify-content-center")
+        form(action="/users" method="post" enctype="multipart/form-data" style="width:750px; height:1100px;")
+          .form-group.row
+            label.col-sm-2.col-form-label(for='inputEmail3') Full Name
+            .col-sm-10
+              input#inputEmail3.form-control(type='text', placeholder="Full Name", required="required", name="user")
+          
+          .form-group.row
+            label.col-sm-2.col-form-label(for='inputEmail3') Email
+            .col-sm-10
+              input#inputEmail3.form-control(type='email', placeholder='Enter Email', name='userEmail', required='')
+          
+          .form-group.row
+            label.col-sm-2.col-form-label(for='inputEmail3') Job Title/ Designation
+            .col-sm-10
+              input#inputEmail3.form-control(type='text', placeholder='Enter current designation', name='designation', required='')
+
+          .form-group.row
+            label.col-sm-2.col-form-label(for='inputEmail3') LinkedIn URL
+            .col-sm-10
+              input#inputEmail3.form-control(type='text', placeholder='Enter LinkedIn URL', name='linkedIn')
+
+          .form-group.row
+            label.col-sm-2.col-form-label(for='inputEmail3') Password
+            .col-sm-10
+              input#inputEmail3.form-control(type='password', placeholder='Enter Password', name='psw', required='')
+
+          .form-group.row
+            label.col-sm-2.col-form-label(for='inputEmail3') Brief Description about You :
+            .col-sm-10
+              textarea(id="myTextarea" placeholder='Type here ...' name='description' rows="4" cols="70" style="white-space: pre-wrap; padding: 12px 20px;")
+
+          label(for='psw-repeat') Choose a Profile Picture : 
+          input(type="file" placeholder="user picture" name="file")
+          hr
+          div(style="text-align: center;")
+            button(class="button") Create User
+              

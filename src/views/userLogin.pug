@@ -1,0 +1,88 @@
+extends ./Main_Layout.pug
+
+block styles_1
+    link(rel='stylesheet' href="/css/index.css")
+    link(rel='stylesheet' href="/css/bootstrap.min.css")
+    link(rel='stylesheet' href="/css/table.css")
+    link(rel='stylesheet' href="/css/link.css")
+block script_1
+    script(src="/js/bootstrap.min.js")
+block content
+  br
+  br
+  br
+  br
+  br
+  div(class="container")
+    div(class="row")
+      div(class="shadow p-3 mb-5 bg-white rounded")
+        div(class="card" style="width: 18rem;")
+            img(class="card-img-top" src='/img/users/' + user.image alt="user.image")
+            div(class="card-body")
+              h5(class="card-title")= user.name
+              p(class="card-text")= user.email
+              a(href=user.linkedin class="btn btn-outline-info") Linked In Profile
+              
+      div(class="col")
+        div(class="description" style="text-align:left, , border-right: thick solid #ff0000;")
+          br
+          h4(style="color:rgb(14,14,64);font-weight: bold")=user.name
+          p(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;font-style: italic; font-weight: bold;background-image: linear-gradient(-90deg, grey, rgb(12, 106, 160, 0.3));") - #{user.desig}
+          p
+          b Email : 
+          i #{user.email}
+          br
+          br
+          p=user.descr
+      
+      div(class="description" style="text-align:center")
+        br
+        hr
+        br
+        div(id="buttonDataset")
+          a(href="/Users" style="text-align:center; padding: 14px 38px;") Log Out
+        br
+        hr 
+        br  
+        a(href="/update/" + user._id class="button" style="text-align:right; padding: 14px 32px;") Update Account
+        br
+        br
+        hr
+        br
+        div(id="buttonDelete")
+          a(href="/delete/" + user._id style="text-align:right; padding: 14px 32px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);") Delete Account
+        br
+        br
+        hr
+        br
+
+  hr
+  div(class="project" style="text-align: center")
+    h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Projects 
+        h4(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Upload your projects/sample codes
+        br
+        div(id="buttonDataset")
+          a(href="/Upload_Project" style="text-align: center;") New Project
+  br
+  hr 
+  table(class="table table-hover table-striped" style="box-shadow: 10px 10px 5px #888; width: 70%")
+    thead(class="head" style="background-color: grey; color: white; background-image: linear-gradient(-90deg, grey, rgb(12, 106, 160, 0.3));")
+        tr 
+            th(scope='col') Project/ Code
+            th(scope='col') Type (ML/DL/NLP/DS/AI)
+            th(scope='col') Description
+            th(scope='col') Programming Language
+            th(scope='col') Delete
+    tbody
+        each proj in projectList
+            tr
+                td=proj.name
+                td=proj.type
+                td=proj.descr
+                td=proj.lang
+                td 
+                  a(href="/delete_project/" + proj._id class="btn btn-danger") Delete
+  br
+  br
+  br
+

@@ -1,0 +1,53 @@
+extends ./Main_Layout.pug
+
+block styles_1
+    link(rel='stylesheet' href="/css/index.css")
+    link(rel='stylesheet' href="/css/link.css")
+block script_1
+    script(src="/js/bootstrap.min.js")
+block content
+    br
+    br
+    br
+    br 
+    div(class="Users_heading" style="text-align: center")
+        h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Upload New Project/ Code
+        h5 Please fill in the details to upload your Project.
+    br
+    br 
+    div(class="container center_div" style=".center_div{margin: 0 auto;width:80%};")
+      div(class="row justify-content-center")
+        form(action="/user" method="post" enctype="multipart/form-data" style="width:800px; height:930px;")
+          .form-group.row
+            label.col-sm-2.col-form-label(for='project') Project
+            .col-sm-10
+              input#inputEmail3.form-control(type="text" placeholder="Project" required="required" name="name")
+          .form-group.row
+            label.col-sm-2.col-form-label(for='type') Type(ML/DL/NLP/DS/AI)
+            .col-sm-10
+              input#inputEmail3.form-control(type='text', placeholder='Enter Type', name='type', required='')
+          .form-group.row
+            label.col-sm-2.col-form-label(for='myTextarea') Description :
+            .col-sm-10
+              textarea(id="myTextarea" placeholder='Enter Description' name='description' rows="4" cols="75" style="white-space: pre-wrap;padding: 12px 20px;")
+          .form-group.row
+            label.col-sm-2.col-form-label(for='language') Programming Language
+            .col-sm-10
+              input#inputEmail3.form-control(type='text', placeholder='Enter Programming Language Used', name='language', required='')
+          .form-group.row
+            label.col-sm-2.col-form-label(for='UserName') Uploaded By
+            .col-sm-10
+              select(name='userName', id='')
+                each val in userNameList
+                    option=val
+            br
+            hr
+          label(for='file') Attach the Project File : 
+          input(type="file" placeholder="user picture" name="file" required='')
+          hr
+          div(style="text-align: center;")
+            button(onclick='myFunction()' class="button") Upload Project/Code
+          
+          
+            
+        

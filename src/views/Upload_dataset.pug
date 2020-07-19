@@ -1,0 +1,48 @@
+extends ./Main_Layout.pug 
+
+block styles_1
+    link(rel='stylesheet' href="/css/index.css")
+    link(rel='stylesheet' href="/css/link.css")
+block script_1
+    script(src="/js/bootstrap.min.js")
+block content
+    br
+    br
+    hr
+    br
+    br
+    br
+    div(class="Users_heading" style="text-align: center")
+        h1(style="color:white; text-shadow: 1px 1px 2px black, 0 0 25px silver, 0 0 5px darkblue;") Upload New Dataset
+        h5 Please fill in this form to upload a dataset.
+    br
+    br 
+    div(class="container center_div" style=".center_div{margin: 0 auto;width:80%};")
+      div(class="row justify-content-center")
+        form(action="/datasets" method="post" enctype="multipart/form-data" style="width:750px; height:890px;")
+          .form-group.row
+            label.col-sm-2.col-form-label(for='name') Dataset Name
+            .col-sm-10
+              input#inputEmail3.form-control(type="text" placeholder="Dataset" required="required" name="name")
+          .form-group.row
+            label.col-sm-2.col-form-label(for='type') Type of Dataset
+            .col-sm-10
+              input#inputEmail3.form-control(type='text', placeholder='Enter Type', name='type', required='')
+          .form-group.row
+            label.col-sm-2.col-form-label(for='authorName') Uploaded by
+            .col-sm-10
+              input#inputEmail3.form-control(type='text', placeholder='Enter Full Name', name='authorName', required='')
+          .form-group.row
+            label.col-sm-2.col-form-label(for='myTextarea') Description : 
+            .col-sm-10
+              textarea(id="myTextarea" placeholder='Enter Description' name='description' rows="4" cols="70" style="white-space: pre-wrap; padding: 12px 20px;")
+            
+          label(for='file') Attach the Dataset : 
+          input(type="file" placeholder="superhero picture" name="file" required='')
+          hr
+          div(style="text-align: center;")       
+            button(onclick='myFunction()' class="button") Upload Dataset
+          
+      
+        
+      

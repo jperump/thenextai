@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title The Next AI
+        link(rel='stylesheet' href="/css/index.css")
+        link(rel='stylesheet' href="/css/bootstrap.min.css")
+        block styles
+        script(src="/js/typewrite.js")
+        script(src="/js/sticky.js")
+        script(src="/js/bootstrap.min.js")
+        block scripts
+    
+        header
+          nav.navbar.fixed-top(style="background-image: linear-gradient(-180deg, rgba(245, 248, 248), rgb(12, 106, 160, 0.6)) ;max-width: 1370px;")
+            a(href='/contact' style="border-radius: 4px;") Contact
+            ul#nav.nav 
+              li
+                a(href='/' style="border-radius: 4px;") Home
+        br
+        br
+        #myHeader.header
+          nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top.mt-lg-5(style="background-image: linear-gradient(-90deg, rgba(45, 179, 212, 0.3), rgba(4, 70, 109, 0.3));")
+            a.nav-item.nav-link(href='/') Home
+            a.nav-item.nav-link(href='/Datasets') Datasets
+            a.nav-item.nav-link(href='/Projects') Projects
+            a.nav-item.nav-link(href='/Users') Users
+    body
+      block styles_1
+      block script_1
+      block content
